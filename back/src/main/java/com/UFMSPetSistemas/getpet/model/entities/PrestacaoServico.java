@@ -1,7 +1,9 @@
 package com.UFMSPetSistemas.getpet.model.entities;
 
+import jakarta.persistence.*;
+
+import java.sql.Date;
 import java.util.Collection;
-import model.AvaliacaoServico;
 
 public class PrestacaoServico {
 
@@ -17,7 +19,7 @@ public class PrestacaoServico {
 
 	private Collection<UsuarioConsumidor> usuarioConsumidor;
 
-	private AvaliacaoServico avaliacaoServico;
+	private int avaliacaoServico;
 
 	private Collection<UsuarioServico> usuarioServico;
 

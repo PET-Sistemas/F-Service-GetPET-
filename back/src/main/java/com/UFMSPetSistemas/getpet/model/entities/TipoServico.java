@@ -10,8 +10,6 @@ public class TipoServico {
 
 	private TipoServico tipoServico;
 
-	private TipoServico tipoServico;
-
 	private Collection<UsuarioFornecedor> usuarioServico;
 
 	private Categoria categoria;
