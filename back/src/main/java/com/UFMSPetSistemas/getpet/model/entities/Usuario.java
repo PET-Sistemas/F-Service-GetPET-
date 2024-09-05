@@ -9,24 +9,38 @@ public class Usuario {
 	private @Id @GeneratedValue
 	Long id;
 
-	private String nomeCompleto;
+	private @NotBlank(message = "O nome completo é obrigatório.")
+	@Size(min = 3, max = 50, message = "O nome completo deve ter entre 3 e 50 caracteres.")
+	String nomeCompleto;
 
-	private Date dataNascimento;
-
-
-	private String endereco;
-
-
-	private String cidade;
+	private @Past(message = "A data de nascimento deve ser uma data passada.")
+	@Temporal(TemporalType.DATE)
+	Date dataNascimento;
 
 
-	private String uf;
+	private @NotBlank(message = "O endereço é obrigatório.")
+	@Size(max = 100, message = "O endereço deve ter no máximo 100 caracteres.")
+	String endereco;
 
 
-	private String email;
+	private @NotBlank(message = "A cidade é obrigatória.")
+	@Size(max = 50, message = "A cidade deve ter no máximo 50 caracteres.")
+	String cidade;
 
 
-	private String telefone;
+	private  @NotBlank(message = "O estado (UF) é obrigatório.")
+	@Size(min = 2, max = 2, message = "O estado (UF) deve ter 2 caracteres.")
+	String uf;
+
+
+	private @NotBlank(message = "O e-mail é obrigatório.")
+	@Email(message = "O e-mail deve ser válido.")
+	String email;
+
+
+	private @NotBlank(message = "O telefone é obrigatório.")
+	@Pattern(regexp = "\\d{11}", message = "O telefone deve ter 11 dígitos numéricos.")
+	String telefone;
 
 
 	private String senha;
